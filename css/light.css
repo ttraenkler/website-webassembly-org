@@ -1,0 +1,40 @@
+:root {
+  color-scheme: light;
+
+  --color-fg: #151515;
+  --color-bg: #fefefe;
+  --color-bg-highlight: rgb(0 0 0 / 5%);
+  --color-bg-secondary: rgb(0 0 0 / 1.25%);
+  --color-link: #1751a7;
+  --color-link-visited: #5817a7;
+  --color-border: rgb(0 0 0 / 15%);
+  --color-border-primary: #7facec;
+
+  color: var(--color-fg);
+  background-color: var(--color-bg);
+}
+
+.flash.flash-warn {
+  color: #000;
+  background-color: #feffd1;
+}
+
+.flash.flash-warn a {
+  color: #9c8529;
+}
+
+.lead {
+  color: #3a3a3a;
+}
+
+blockquote {
+  color: #777;
+}
+
+h6 {
+  color: #777;
+}
+
+#feature-table .top-corner {
+  border-top: none !important;
+}

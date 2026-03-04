@@ -1,0 +1,32 @@
+{
+  "name": "wasm-compat",
+  "version": "1.3.0",
+  "description": "A custom element for showing engine compatibility information of Wasm features",
+  "keywords": [
+    "wasm-compat"
+  ],
+  "homepage": "https://github.com/WebAssembly/website#readme",
+  "bugs": {
+    "url": "https://github.com/WebAssembly/website/issues"
+  },
+  "files": [
+    "wasm-compat.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebAssembly/website.git"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  },
+  "license": "Apache-2.0",
+  "author": "Thomas Steiner (tomac@google.com)",
+  "type": "module",
+  "main": "wasm-compat.js",
+  "exports": {
+    ".": "./wasm-compat.js"
+  },
+  "scripts": {
+    "prettier": "npx prettier . --write --embedded-language-formatting=auto"
+  }
+}

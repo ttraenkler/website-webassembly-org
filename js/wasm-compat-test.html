@@ -1,0 +1,26 @@
+<!-- @license © 2025 Google LLC. Licensed under the Apache License, Version 2.0. -->
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <style>
+      :root {
+        font-family: system-ui, sans-serif;
+        color-scheme: dark light;
+      }
+      wasm-compat {
+        font-family: system-ui, sans-serif;
+        max-width: 800px;
+      }
+    </style>
+    <script type="module" src="wasm-compat.js"></script>
+  </head>
+  <body>
+    <h1><code>&ltwasm-feature&gt;</code></h1>
+    <h2>Regular</h2>
+    <wasm-compat wasm-feature="bigInt"></wasm-compat>
+    <h2>No header</h2>
+    <wasm-compat wasm-feature="bigInt" hide-header></wasm-compat>
+  </body>
+</html>
