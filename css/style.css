@@ -310,6 +310,10 @@ a {
   max-width: 1000px;
 }
 
+.hero-lead {
+  font-size: 0;
+}
+
 .hero-sub {
   font-size: 18px;
   line-height: 1.7;
