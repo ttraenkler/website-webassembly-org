@@ -729,6 +729,17 @@ section {
   color: var(--gray-400);
 }
 
+.pillars-content a {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--border-strong);
+}
+
+.pillars-content a:hover {
+  text-decoration-color: var(--white);
+}
+
 /* Icons via CSS for pillar bubbles */
 .pillars-content .bubble::before {
   content: '';
@@ -1095,7 +1106,7 @@ footer {
 .prose a {
   color: var(--white);
   text-decoration: underline;
-  text-decoration-color: var(--gray-500);
+  text-decoration-color: var(--border-strong);
   text-underline-offset: 2px;
   transition: text-decoration-color 0.15s;
 }
@@ -1188,11 +1199,15 @@ footer {
 }
 
 .upstream-content a {
-  color: var(--gray-400);
+  color: var(--white);
+  text-decoration: underline;
+  text-decoration-color: var(--border-strong);
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.15s;
 }
 
 .upstream-content a:hover {
-  color: var(--white);
+  text-decoration-color: var(--white);
 }
 
 @media (max-width: 768px) {
