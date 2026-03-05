@@ -1269,6 +1269,21 @@ footer {
     sans-serif;
 }
 
+/* ── Feature table sticky header ── */
+#feature-scroll {
+  max-height: 80vh;
+  overflow: auto;
+}
+#feature-table thead .platform-header-row th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--color-bg);
+}
+#feature-table thead .platform-header-row .top-corner {
+  z-index: 12;
+}
+
 /* ── Feature table dark-mode overrides ── */
 /* Upstream feature-table.css has hardcoded light-theme status colors */
 :root #feature-table .text-secondary {
