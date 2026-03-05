@@ -61,7 +61,7 @@
   --surface-hover: rgba(0, 0, 0, 0.03);
   --surface-code: rgba(0, 0, 0, 0.06);
   --nav-bg: rgba(255, 255, 255, 0.8);
-  --hero-glow: rgba(100, 100, 200, 0.08);
+  --hero-glow: rgba(100, 100, 100, 0.08);
 
   /* Bridge upstream CSS variables for feature-table */
   --color-bg: var(--black);
@@ -362,7 +362,7 @@ section {
 
 /* ── Features ── */
 .features-intro {
-  padding-bottom: 80px;
+  padding-bottom: 48px;
 }
 
 .features-intro h2 {
@@ -503,6 +503,36 @@ section {
   object-fit: contain;
 }
 
+[data-theme='light'] .lang-icon {
+  filter: invert(1);
+}
+
+/* Compact lang-grid inside prose (getting-started, etc.) */
+.prose .lang-grid {
+  gap: 4px;
+  margin-bottom: 40px;
+}
+.prose .lang-chip {
+  padding: 10px 14px;
+  gap: 10px;
+  font-size: 11px;
+}
+.prose .lang-icon {
+  width: 40px;
+  height: 40px;
+}
+
+/* Inline language icons in lists */
+.lang-icon-inline {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+[data-theme='light'] .lang-icon-inline {
+  filter: invert(1);
+}
+
 /* ── WA Logo ── */
 .wasm-logo {
   flex-shrink: 0;
@@ -513,7 +543,7 @@ section {
 }
 
 .hero-brand .wasm-banner {
-  height: clamp(64px, 8vw, 96px);
+  height: clamp(64px, 8vw, 128px);
   width: auto;
 }
 
@@ -643,17 +673,90 @@ section {
   max-width: 680px;
 }
 
-/* ── Dev Reference ── */
-.dev-ref {
-  margin-top: 40px;
-  padding: 20px 24px;
-  border-radius: 10px;
-  background: rgb(255 200 50 / 8%);
-  border: 1px solid rgb(255 200 50 / 18%);
+/* ── Pillars Content (rendered from index.md) ── */
+.pillars-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--border);
+}
+
+.pillars-content .flash {
+  grid-column: 1 / -1;
+  padding: 20px 36px;
+  background: var(--gray-900);
+  border-bottom: 1px solid var(--border);
   font-size: 15px;
   line-height: 1.7;
   color: var(--gray-400);
-  max-width: 600px;
+}
+
+.pillars-content .row {
+  display: contents;
+}
+
+.pillars-content .bubble {
+  padding: 48px 36px;
+  border-right: 1px solid var(--border);
+  transition: background 0.2s;
+}
+
+.pillars-content .bubble:last-child {
+  border-right: none;
+}
+
+.pillars-content .bubble:hover {
+  background: var(--surface-hover);
+}
+
+.pillars-content .bubble h3 {
+  font-family: var(--mono);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 20px;
+  color: var(--white);
+}
+
+.pillars-content .bubble p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--gray-400);
+}
+
+/* Icons via CSS for pillar bubbles */
+.pillars-content .bubble::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 28px;
+  margin-bottom: 32px;
+  background: no-repeat center / contain;
+}
+
+:root[data-theme='light'] .pillars-content .bubble::before {
+  filter: invert(1);
+}
+
+/* Lightning bolt — Efficient and fast */
+.pillars-content .row .bubble:nth-child(1)::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='13 2 3 14 12 14 11 22 21 10 12 10 13 2'/%3E%3C/svg%3E");
+}
+
+/* Lock — Safe */
+.pillars-content .row .bubble:nth-child(2)::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='11' width='18' height='11' rx='2' ry='2'/%3E%3Cpath d='M7 11V7a5 5 0 0110 0v4'/%3E%3C/svg%3E");
+}
+
+/* Code brackets — Open and debuggable */
+.pillars-content .row .bubble:nth-child(3)::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='16 18 22 12 16 6'/%3E%3Cpolyline points='8 6 2 12 8 18'/%3E%3C/svg%3E");
+}
+
+/* Globe — Part of the open web platform */
+.pillars-content .row .bubble:nth-child(4)::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' fill='none' stroke='%23f5f5f5' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cline x1='2' y1='12' x2='22' y2='12'/%3E%3Cpath d='M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z'/%3E%3C/svg%3E");
 }
 
 /* ── CTA ── */
@@ -878,6 +981,15 @@ footer {
   .features-grid .feature-card:nth-child(4) {
     border-top: 1px solid var(--border);
   }
+  .pillars-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pillars-content .bubble:last-child {
+    border-right: none;
+  }
+  .pillars-content .row .bubble:nth-child(n + 3) {
+    border-top: 1px solid var(--border);
+  }
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -906,6 +1018,16 @@ footer {
     border-bottom: 1px solid var(--border);
   }
   .feature-card:last-child {
+    border-bottom: none;
+  }
+  .pillars-content {
+    grid-template-columns: 1fr;
+  }
+  .pillars-content .bubble {
+    border-right: none !important;
+    border-bottom: 1px solid var(--border);
+  }
+  .pillars-content .bubble:last-child {
     border-bottom: none;
   }
   .stats-grid {
