@@ -1119,6 +1119,19 @@ footer {
   padding-left: 5%;
 }
 
+[data-theme='light'] .site-nav.nav-compact .nav-links {
+  border-top-color: rgba(0, 0, 0, 0.1);
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='light'] .site-nav.nav-compact .nav-links li + li::before {
+  border-top-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .site-nav.nav-compact .nav-links li a {
+  color: rgba(0, 0, 0, 0.75);
+}
+
 .site-nav.nav-compact .nav-right {
   display: none;
 }
