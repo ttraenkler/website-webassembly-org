@@ -1196,6 +1196,10 @@ footer {
 }
 
 @media (max-width: 600px) {
+  .section-pad {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
   .features-grid {
     grid-template-columns: 1fr;
   }
@@ -1238,11 +1242,18 @@ footer {
     gap: 16px;
   }
   .lang-grid {
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+  }
+  .lang-chip {
+    padding: 8px 10px;
+    gap: 6px;
+    font-size: 11px;
   }
   .lang-icon {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
   }
 }
 
