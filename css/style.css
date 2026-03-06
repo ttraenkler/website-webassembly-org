@@ -256,6 +256,7 @@ a {
   font-weight: 600;
   color: var(--white);
   text-decoration: none;
+  white-space: nowrap;
   padding: 8px 16px;
   border: 1px solid var(--border);
   border-radius: 6px;
@@ -280,6 +281,7 @@ a {
   font-weight: 600;
   color: var(--black);
   text-decoration: none;
+  white-space: nowrap;
   padding: 8px 18px;
   border: 1px solid var(--white);
   border-radius: 6px;
@@ -394,7 +396,7 @@ a {
   line-height: 0.97;
   letter-spacing: -0.05em;
   margin-bottom: 48px;
-  max-width: 1000px;
+  max-width: 880px;
 }
 
 .hero-lead {
@@ -1119,11 +1121,11 @@ footer {
 
   .hero-wrapper::before {
     background: radial-gradient(
-      circle at 23% 28%,
-      hsla(247, 76%, 61%, 0.7) 0%,
-      hsla(247, 76%, 61%, 0.35) 12%,
-      hsla(247, 76%, 61%, 0.12) 20%,
-      transparent 25%
+      circle at 30% 20%,
+      hsla(247, 76%, 61%, 0.5) 0%,
+      hsla(247, 76%, 61%, 0.3) 20%,
+      hsla(247, 76%, 61%, 0.1) 40%,
+      transparent 60%
     );
   }
   section {
@@ -1220,6 +1222,10 @@ footer {
   }
   .lang-grid {
     justify-content: center;
+  }
+  .lang-icon {
+    width: 48px;
+    height: 48px;
   }
 }
 
