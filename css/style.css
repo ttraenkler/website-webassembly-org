@@ -316,20 +316,16 @@ a {
 .hero-wrapper::before {
   content: '';
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 300%;
-  height: 300%;
-  transform: perspective(800px) rotateX(30deg) rotateY(15deg);
-  transform-origin: top left;
+  top: -30%;
+  left: -15%;
+  width: 80%;
+  height: 100%;
   background: radial-gradient(
-    ellipse at 15% 15%,
-    rgba(59, 130, 246, 0.35) 0%,
-    rgba(59, 130, 246, 0.12) 15%,
-    transparent 35%
+    ellipse at center,
+    var(--hero-glow) 0%,
+    transparent 65%
   );
   pointer-events: none;
-  z-index: 0;
 }
 
 .hero {
